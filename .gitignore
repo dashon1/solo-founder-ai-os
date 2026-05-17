@@ -1,0 +1,5 @@
+# Ignore large PDF files for faster cloning
+*.pdf
+*.pdf-ready.html
+*.html
+!index.html

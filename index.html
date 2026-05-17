@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo Founder AI Operating System | Run Your Week With AI</title>
+    <meta name="description" content="The complete operating system for solo founders who want to leverage AI strategically. Includes role maps, planning templates, routing systems, and 25+ AI prompts.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: #ffffff;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f1c32 100%);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+        }
+        
+        .logo-text {
+            font-size: 14pt;
+            font-weight: 700;
+        }
+        
+        .header-cta {
+            background: white;
+            color: #1e3a5f;
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 11pt;
+            transition: transform 0.2s;
+        }
+        
+        .header-cta:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+            padding: 160px 20px 80px;
+            text-align: center;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 11pt;
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .hero h1 {
+            font-size: 48pt;
+            font-weight: 800;
+            color: #1e3a5f;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero h1 span {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 20pt;
+            color: #64748b;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13pt;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #1e3a5f;
+            padding: 16px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13pt;
+            border: 2px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+        
+        .btn-secondary:hover {
+            border-color: #3b82f6;
+            background: #f8fafc;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-stat {
+            text-align: center;
+        }
+        
+        .hero-stat-number {
+            font-size: 32pt;
+            font-weight: 800;
+            color: #1e3a5f;
+        }
+        
+        .hero-stat-label {
+            font-size: 11pt;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Problem Section */
+        .problem {
+            background: #1e3a5f;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .problem h2 {
+            font-size: 36pt;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .problem-subtitle {
+            font-size: 18pt;
+            color: rgba(255,255,255,0.8);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .problem-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 50px auto 0;
+        }
+        
+        .problem-point {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: left;
+        }
+        
+        .problem-point-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .problem-point-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+        }
+        
+        .problem-point h3 {
+            color: white;
+            font-size: 14pt;
+            margin-bottom: 10px;
+        }
+        
+        .problem-point p {
+            color: rgba(255,255,255,0.7);
+            font-size: 11pt;
+        }
+        
+        /* Who This Is For */
+        .who-for {
+            padding: 100px 20px;
+            background: white;
+        }
+        
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-label {
+            display: inline-block;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            color: #92400e;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 10pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            font-size: 36pt;
+            font-weight: 800;
+            color: #1e3a5f;
+            margin-bottom: 15px;
+        }
+        
+        .section-subtitle {
+            font-size: 16pt;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .who-for-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .who-for-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 30px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .who-for-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        
+        .who-for-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .who-for-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+        }
+        
+        .who-for-card h3 {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+        }
+        
+        .who-for-card p {
+            color: #64748b;
+            font-size: 11pt;
+        }
+        
+        /* What's Inside */
+        .whats-inside {
+            background: #f8fafc;
+            padding: 100px 20px;
+        }
+        
+        .inside-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        
+        .inside-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .inside-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        }
+        
+        .inside-number {
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 14pt;
+            margin-bottom: 20px;
+        }
+        
+        .inside-card h3 {
+            font-size: 15pt;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+        }
+        
+        .inside-card p {
+            color: #64748b;
+            font-size: 11pt;
+            margin-bottom: 15px;
+        }
+        
+        .inside-list {
+            list-style: none;
+        }
+        
+        .inside-list li {
+            padding: 8px 0;
+            color: #475569;
+            font-size: 10pt;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .inside-list li::before {
+            content: '✓';
+            color: #10b981;
+            font-weight: 700;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 20px;
+            background: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 35px;
+        }
+        
+        .testimonial-stars {
+            color: #f59e0b;
+            font-size: 18pt;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-text {
+            font-size: 13pt;
+            color: #334155;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 16pt;
+        }
+        
+        .testimonial-name {
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+        
+        .testimonial-role {
+            color: #64748b;
+            font-size: 10pt;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 100px 20px;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            border: 2px solid #e2e8f0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid #3b82f6;
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            color: white;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 10pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .pricing-name {
+            font-size: 18pt;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+        }
+        
+        .pricing-description {
+            color: #64748b;
+            font-size: 11pt;
+            margin-bottom: 25px;
+        }
+        
+        .pricing-price {
+            margin-bottom: 30px;
+        }
+        
+        .pricing-amount {
+            font-size: 42pt;
+            font-weight: 800;
+            color: #1e3a5f;
+        }
+        
+        .pricing-card.featured .pricing-amount {
+            color: #3b82f6;
+        }
+        
+        .pricing-period {
+            color: #64748b;
+            font-size: 11pt;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #334155;
+            font-size: 11pt;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-features li svg {
+            width: 20px;
+            height: 20px;
+            stroke: #10b981;
+            flex-shrink: 0;
+        }
+        
+        .pricing-cta {
+            display: block;
+            text-align: center;
+            padding: 16px 30px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 12pt;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .pricing-cta-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            color: white;
+        }
+        
+        .pricing-cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+        
+        .pricing-cta-secondary {
+            background: white;
+            color: #1e3a5f;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .pricing-cta-secondary:hover {
+            border-color: #3b82f6;
+            background: #f8fafc;
+        }
+        
+        /* Guarantee */
+        .guarantee {
+            background: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .guarantee-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 2px solid #10b981;
+            border-radius: 20px;
+            padding: 50px;
+        }
+        
+        .guarantee-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+        
+        .guarantee-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: white;
+        }
+        
+        .guarantee h2 {
+            font-size: 28pt;
+            font-weight: 800;
+            color: #166534;
+            margin-bottom: 15px;
+        }
+        
+        .guarantee p {
+            color: #15803d;
+            font-size: 13pt;
+            line-height: 1.7;
+        }
+        
+        /* FAQ */
+        .faq {
+            background: #f8fafc;
+            padding: 100px 20px;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin-bottom: 15px;
+        }
+        
+        .faq-question {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+        }
+        
+        .faq-answer {
+            color: #64748b;
+            font-size: 11pt;
+            line-height: 1.7;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f1c32 100%);
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 36pt;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .final-cta p {
+            font-size: 16pt;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #0f1c32;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer p {
+            color: rgba(255,255,255,0.5);
+            font-size: 10pt;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32pt;
+            }
+            
+            .hero-subtitle {
+                font-size: 16pt;
+            }
+            
+            .section-title {
+                font-size: 28pt;
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
+            
+            .hero-stats {
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Solo Founder AI OS</span>
+            </a>
+            <a href="#pricing" class="header-cta">Get Started</a>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-badge">Digital Product for Solo Founders</div>
+        <h1>Run Your Week With <span>AI Roles</span>, Repeatable Workflows, and Less Mental Clutter</h1>
+        <p class="hero-subtitle">The complete operating system for solo founders who want to leverage AI strategically—without losing control of their business.</p>
+        
+        <div class="hero-cta-group">
+            <a href="#pricing" class="btn-primary">
+                Get Instant Access
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+            </a>
+            <a href="#whats-inside" class="btn-secondary">See What's Inside</a>
+        </div>
+        
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="hero-stat-number">60+</div>
+                <div class="hero-stat-label">Pages</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-number">25+</div>
+                <div class="hero-stat-label">AI Prompts</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-number">8</div>
+                <div class="hero-stat-label">Core Templates</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-number">30</div>
+                <div class="hero-stat-label">Day Guarantee</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Problem Section -->
+    <section class="problem">
+        <h2>Sound Familiar?</h2>
+        <p class="problem-subtitle">You're working harder than ever but feeling like you're always behind. AI tools seem promising, but nothing actually sticks.</p>
+        
+        <div class="problem-points">
+            <div class="problem-point">
+                <div class="problem-point-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h3>Decision Fatigue</h3>
+                <p>You spend more time deciding what to do than actually doing it. Every task requires a fresh decision about whether to handle it yourself, delegate it, or use AI.</p>
+            </div>
+            <div class="problem-point">
+                <div class="problem-point-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h3>AI Overwhelm</h3>
+                <p>You've tried ChatGPT and other AI tools, but outputs feel generic. You spend more time editing than if you just did it yourself.</p>
+            </div>
+            <div class="problem-point">
+                <div class="problem-point-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h3>Reactive Mode</h3>
+                <p>You spend your days firefighting instead of focusing on high-leverage activities. Planning feels like a luxury you don't have time for.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Who This Is For -->
+    <section class="who-for" id="who-for">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Is This For You?</span>
+                <h2 class="section-title">Who This System Is For</h2>
+                <p class="section-subtitle">This operating system is designed specifically for solo founders who want structure without complexity.</p>
+            </div>
+            
+            <div class="who-for-grid">
+                <div class="who-for-card">
+                    <div class="who-for-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c3.183 0 6.22.628 9 1.772A25.89 25.89 0 0112 21c-4.286 0-8.292-.707-11.956-1.772A24.86 24.86 0 013 12c0-3.183.628-6.22 1.772-9M9 12l2 2 4-4m5.618-5.618a9 9 0 11-12.728 0"/>
+                        </svg>
+                    </div>
+                    <h3>You're Drowning in Tasks</h3>
+                    <p>You wear dozens of hats and struggle to prioritize what actually moves your business forward. Everything feels urgent but nothing gets done.</p>
+                </div>
+                
+                <div class="who-for-card">
+                    <div class="who-for-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3>You're Using AI But Not Seeing Results</h3>
+                    <p>You've tried ChatGPT and other AI tools but outputs feel generic and require so much editing that it's not worth the effort.</p>
+                </div>
+                
+                <div class="who-for-card">
+                    <div class="who-for-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
+                    </div>
+                    <h3>You Make Too Many Decisions From Scratch</h3>
+                    <p>Every task requires deciding whether to handle it yourself, delegate it, or use AI. You waste mental energy on decisions that should be automatic.</p>
+                </div>
+                
+                <div class="who-for-card">
+                    <div class="who-for-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3>You Feel Reactive Instead of Strategic</h3>
+                    <p>You spend your days putting out fires instead of making progress on what matters most. Strategic planning feels like a luxury you can't afford.</p>
+                </div>
+                
+                <div class="who-for-card">
+                    <div class="who-for-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <h3>You're Overwhelmed by Information</h3>
+                    <p>You consume lots of productivity content but struggle to implement anything consistently. You know what you should do, but it never happens.</p>
+                </div>
+                
+                <div class="who-for-card">
+                    <div class="who-for-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3>You Want a Simple System That Actually Works</h3>
+                    <p>You're tired of complex frameworks and shiny new apps. You want something print-and-use that fits into your already-busy life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- What's Inside -->
+    <section class="whats-inside" id="whats-inside">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">What's Included</span>
+                <h2 class="section-title">Everything You Need to Run Your Business with AI</h2>
+                <p class="section-subtitle">8 core components that work together as an integrated operating system.</p>
+            </div>
+            
+            <div class="inside-grid">
+                <div class="inside-card">
+                    <div class="inside-number">1</div>
+                    <h3>AI Role Map</h3>
+                    <p>Define clear boundaries for what AI handles and what requires your attention.</p>
+                    <ul class="inside-list">
+                        <li>Three-category task framework</li>
+                        <li>25+ common task examples</li>
+                        <li>Customization guide</li>
+                    </ul>
+                </div>
+                
+                <div class="inside-card">
+                    <div class="inside-number">2</div>
+                    <h3>Weekly Planning Template</h3>
+                    <p>Structure your 30-minute weekly review and planning session.</p>
+                    <ul class="inside-list">
+                        <li>Fill-in-the-blank worksheets</li>
+                        <li>5-step planning process</li>
+                        <li>Habit tracking templates</li>
+                    </ul>
+                </div>
+                
+                <div class="inside-card">
+                    <div class="inside-number">3</div>
+                    <h3>Task Routing System</h3>
+                    <p>Decide what goes to AI and what stays with you—in seconds.</p>
+                    <ul class="inside-list">
+                        <li>Visual decision flowchart</li>
+                        <li>Quick reference table</li>
+                        <li>12 common task examples</li>
+                    </ul>
+                </div>
+                
+                <div class="inside-card">
+                    <div class="inside-number">4</div>
+                    <h3>Daily Review Checklist</h3>
+                    <p>5-minute habit that bookends your workday and keeps you on track.</p>
+                    <ul class="inside-list">
+                        <li>Morning check-in template</li>
+                        <li>End-of-day reflection</li>
+                        <li>Task routing reminders</li>
+                    </ul>
+                </div>
+                
+                <div class="inside-card">
+                    <div class="inside-number">5</div>
+                    <h3>Prompt Library</h3>
+                    <p>12 ready-to-use prompts for common solo founder tasks.</p>
+                    <ul class="inside-list">
+                        <li>Content creation prompts</li>
+                        <li>Research & analysis prompts</li>
+                        <li>Productivity prompts</li>
+                    </ul>
+                </div>
+                
+                <div class="inside-card">
+                    <div class="inside-number">6</div>
+                    <h3>Founder Dashboard</h3>
+                    <p>Track the metrics and activities that actually matter.</p>
+                    <ul class="inside-list">
+                        <li>Weekly metrics tracker</li>
+                        <li>Monthly health check</li>
+                        <li>Quarterly planning worksheet</li>
+                    </ul>
+                </div>
+                
+                <div class="inside-card">
+                    <div class="inside-number">7</div>
+                    <h3>Decision Log</h3>
+                    <p>Document your reasoning for better future decisions.</p>
+                    <ul class="inside-list">
+                        <li>Complete log template</li>
+                        <li>10-field structure</li>
+                        <li>Sample decision entry</li>
+                    </ul>
+                </div>
+                
+                <div class="inside-card">
+                    <div class="inside-number">8</div>
+                    <h3>Output Quality Checklist</h3>
+                    <p>Ensure AI-generated content meets your standards.</p>
+                    <ul class="inside-list">
+                        <li>Pre-generation checklist</li>
+                        <li>Post-generation review</li>
+                        <li>Content-type specific guides</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Social Proof</span>
+                <h2 class="section-title">What Founders Are Saying</h2>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"The AI Role Map alone was worth the price. I finally have clarity on what to automate and what to keep doing myself. My weekly output has doubled."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S</div>
+                        <div>
+                            <div class="testimonial-name">Sarah Chen</div>
+                            <div class="testimonial-role">SaaS Founder, TechStart</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"I was skeptical at first, but the Weekly Planning Template completely changed how I approach each week. I'm more focused and less stressed."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">M</div>
+                        <div>
+                            <div class="testimonial-name">Michael Torres</div>
+                            <div class="testimonial-role">E-commerce Founder, StyleBox</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"The Prompt Library is incredible. I use at least 3-4 of these prompts daily. They've become the backbone of my content workflow."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">J</div>
+                        <div>
+                            <div class="testimonial-name">Jessica Williams</div>
+                            <div class="testimonial-role">Content Business Founder</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Pricing</span>
+                <h2 class="section-title">Choose Your Package</h2>
+                <p class="section-subtitle">All packages include the 30-day money-back guarantee.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Starter Tier -->
+                <div class="pricing-card">
+                    <div class="pricing-name">Starter</div>
+                    <p class="pricing-description">The essential PDF kit for solo founders ready to build their AI operating system.</p>
+                    <div class="pricing-price">
+                        <span class="pricing-amount">$47</span>
+                        <span class="pricing-period">one-time payment</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Complete 60+ page PDF guide
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            AI Role Map
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Weekly Planning Template
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Task Routing System
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Daily Review Checklist
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Prompt Library (12 prompts)
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Founder Dashboard
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Decision Log
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Output Quality Checklist
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Quick Reference Cards
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Implementation Guide
+                        </li>
+                    </ul>
+                    <a href="#" class="pricing-cta pricing-cta-secondary">Get Started</a>
+                </div>
+                
+                <!-- Professional Tier -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-name">Professional</div>
+                    <p class="pricing-description">Everything in Starter plus digital templates for Notion and Google Sheets.</p>
+                    <div class="pricing-price">
+                        <span class="pricing-amount">$97</span>
+                        <span class="pricing-period">one-time payment</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Everything in Starter
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Notion Template System
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Pre-built AI Role Map board
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Weekly planning database
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Auto-updating dashboard
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Google Sheets Dashboard
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Automatic metrics tracking
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Formula templates
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Priority support
+                        </li>
+                    </ul>
+                    <a href="#" class="pricing-cta pricing-cta-primary">Get Started</a>
+                </div>
+                
+                <!-- Agency Tier -->
+                <div class="pricing-card">
+                    <div class="pricing-name">Agency</div>
+                    <p class="pricing-description">Professional package plus the AI Workflow Automation Guide for power users.</p>
+                    <div class="pricing-price">
+                        <span class="pricing-amount">$149</span>
+                        <span class="pricing-period">one-time payment</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Everything in Professional
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            AI Workflow Automation Guide
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            10 advanced workflows
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Zapier/Make integrations
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Automation templates
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Custom prompt engineering
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Bonus prompts (25+ extra)
+                        </li>
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Future updates included
+                        </li>
+                    </ul>
+                    <a href="#" class="pricing-cta pricing-cta-secondary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Guarantee -->
+    <section class="guarantee">
+        <div class="guarantee-box">
+            <div class="guarantee-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+            </div>
+            <h2>30-Day Money-Back Guarantee</h2>
+            <p>I'm confident this system will help you build a more intentional, AI-powered business. If you're not completely satisfied within 30 days, just send me an email and I'll refund your payment—no questions asked. You have nothing to lose.</p>
+        </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="faq-container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What format is the product delivered in?</div>
+                <div class="faq-answer">The Starter package is delivered as a high-quality PDF designed for printing and filling out by hand. The Professional package also includes Notion templates and Google Sheets that you can copy directly into your accounts.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do I need prior experience with AI to use this?</div>
+                <div class="faq-answer">No! This system is designed for founders at any AI experience level. If you've never used AI tools, the Role Map and Prompt Library will get you started. If you're already using AI, the Task Routing System and Quality Checklist will help you be more intentional.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How much time do I need to invest to use this system?</div>
+                <div class="faq-answer">The Weekly Planning Template takes about 30 minutes once a week. The Daily Review Checklist is just 5 minutes at the start and end of each day. The prompts can be used as needed for specific tasks.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What's included in the Notion templates?</div>
+                <div class="faq-answer">The Notion system includes a pre-built AI Role Map database, Weekly Planning board with linked properties, a Task Tracker with routing status, and a Dashboard view with auto-updating metrics from your task database.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What does the AI Workflow Automation Guide include?</div>
+                <div class="faq-answer">The guide includes 10 advanced automation workflows using tools like Zapier and Make, with step-by-step instructions for connecting your AI tools to your existing workflows. It also includes 25+ bonus prompts for power users.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I access the product after purchase?</div>
+                <div class="faq-answer">After purchase, you'll receive an instant download link for the PDF. Notion templates and Google Sheets come with copyable template links. The Automation Guide is delivered as an additional PDF.</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>Ready to Run Your Week with AI?</h2>
+        <p>Join thousands of solo founders who have transformed how they work with AI.</p>
+        <a href="#pricing" class="btn-primary">
+            Get Instant Access
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+        </a>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 Solo Founder AI Operating System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
